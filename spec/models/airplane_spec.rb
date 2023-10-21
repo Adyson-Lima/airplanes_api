@@ -17,7 +17,7 @@ RSpec.describe Airplane, type: :model do
     end
     
     it 'manufacturer consegue ser preenchido?' do
-      @airplane.manufacturer = ""
+      @airplane.manufacturer = "airbus"
       expect(@airplane.manufacturer).to eq("airbus")
     end
     
