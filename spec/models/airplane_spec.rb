@@ -12,7 +12,7 @@ RSpec.describe Airplane, type: :model do
     end
     
     it 'description consegue ser preenchido?' do
-      @airplane.description = ""
+      @airplane.description = "Um avião bem conceituado"
       expect(@airplane.description).to eq("Um avião bem conceituado")
     end
     
