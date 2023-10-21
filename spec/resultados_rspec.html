@@ -287,44 +287,71 @@ a {
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_2" class="passed">GET /api/v1/airplanes</dt>
-    <script type="text/javascript">moveProgressBar('14.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os airplanes e retornar status 200?</span><span class='duration'>0.07598s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os airplanes e retornar status 200?</span><span class='duration'>0.06387s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">GET /api/v1/airplanes/id</dt>
-    <script type="text/javascript">moveProgressBar('28.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue retornar um airplane especifico e retornar status 200?</span><span class='duration'>0.00658s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue retornar um airplane especifico e retornar status 200?</span><span class='duration'>0.00556s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_4" class="passed">Airplane</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_4" class="passed">POST /api/v1/airplanes</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_4');</script>
+    <script type="text/javascript">makeRed('example_group_4');</script>
+    <script type="text/javascript">moveProgressBar('37.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Consegue criar um airplane e retornar status 201?</span>
+      <span class="duration">0.00364s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: post :create, params: {airplane: {name: @airplane.name, description: @airplane.description, manufacturer: @airplane.manufacturer},format: :json}
+
+  AbstractController::ActionNotFound:
+    The action &#39;create&#39; could not be found for Api::V1::AirplanesController
+  # ./spec/controllers/v1/airplanes_controller_v1_spec.rb:26:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/v1/airplanes_controller_v1_spec.rb:26:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">24</span>  describe 'POST /api/v1/airplanes' do
+<span class="linenum">25</span>    it 'Consegue criar um airplane e retornar status 201?' do
+<span class="offending"><span class="linenum">26</span>      post :create, params: {airplane: {name: @airplane.name, description: @airplane.description, manufacturer: @airplane.manufacturer},format: :json}</span>
+<span class="linenum">27</span>      
+<span class="linenum">28</span>      expect(response.body).to include_json(name: @airplane.name)
+<span class="linenum">29</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_5" class="passed">Teste de preenchimento de campos do model Airplane</dt>
-    <script type="text/javascript">moveProgressBar('42.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00087s</span></dd>
-    <script type="text/javascript">moveProgressBar('57.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">description consegue ser preenchido?</span><span class='duration'>0.00063s</span></dd>
-    <script type="text/javascript">moveProgressBar('71.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">manufacturer consegue ser preenchido?</span><span class='duration'>0.00062s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_5" class="passed">Airplane</dt>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_6" class="passed">Teste de validacao do model Airplane</dt>
-    <script type="text/javascript">moveProgressBar('85.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">Airplane valido com os campos preenchidos?</span><span class='duration'>0.00093s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Airplane invalido com campos obrigatorios em branco?</span><span class='duration'>0.00171s</span></dd>
+  <dt id="example_group_6" class="passed">Teste de preenchimento de campos do model Airplane</dt>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00090s</span></dd>
+    <script type="text/javascript">moveProgressBar('62.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">description consegue ser preenchido?</span><span class='duration'>0.00059s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">manufacturer consegue ser preenchido?</span><span class='duration'>0.00059s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.09157 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "7 examples, 0 failures";</script>
+<div id="div_group_7" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_7" class="passed">Teste de validacao do model Airplane</dt>
+    <script type="text/javascript">moveProgressBar('87.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Airplane valido com os campos preenchidos?</span><span class='duration'>0.00073s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Airplane invalido com campos obrigatorios em branco?</span><span class='duration'>0.00156s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.09044 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "8 examples, 1 failure";</script>
 </div>
 </div>
 </body>

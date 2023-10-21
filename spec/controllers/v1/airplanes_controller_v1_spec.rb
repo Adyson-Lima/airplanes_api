@@ -21,4 +21,13 @@ RSpec.describe Api::V1::AirplanesController, type: :controller do
     end
   end
   
+  describe 'POST /api/v1/airplanes' do
+    it 'Consegue criar um airplane e retornar status 201?' do
+      post :create, params: {airplane: {name: @airplane.name, description: @airplane.description, manufacturer: @airplane.manufacturer},format: :json}
+      
+      expect(response.body).to include_json(name: @airplane.name)
+      expect(response).to have_http_status(201)
+    end
+  end
+  
 end
