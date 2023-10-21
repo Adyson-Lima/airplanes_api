@@ -29,6 +29,10 @@ class Api::V1::AirplanesController < ApplicationController
     end
   end
   
+  def destroy
+    @airplane.destroy
+  end
+  
 private
 
 def set_airplane
