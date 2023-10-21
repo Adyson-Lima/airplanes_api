@@ -7,7 +7,7 @@ RSpec.describe Airplane, type: :model do
   describe 'Teste de preenchimento de campos do model Airplane' do
     
     it 'name consegue ser preenchido?' do
-      @airplane.name = ""
+      @airplane.name = "a320"
       expect(@airplane.name).to eq("a320")
     end
     
