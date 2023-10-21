@@ -7,6 +7,10 @@ class Api::V1::AirplanesController < ApplicationController
     render json: @airplanes
   end
   
+  def show
+    render json: @airplane
+  end
+  
 private
 
 def set_airplane
