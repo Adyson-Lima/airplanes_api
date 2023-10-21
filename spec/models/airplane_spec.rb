@@ -23,4 +23,15 @@ RSpec.describe Airplane, type: :model do
     
   end
   
+  describe 'Teste de validacao do model Airplane' do
+    
+    it 'Airplane valido com os campos preenchidos?' do
+      @airplane.name = "boeing 737-300"
+      @airplane.description = "um avião muito usado"
+      @airplane.manufacturer = ""
+      
+      expect(@airplane).to be_valid 
+    end
+  end
+  
 end
