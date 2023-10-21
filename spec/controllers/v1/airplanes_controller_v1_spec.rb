@@ -41,4 +41,14 @@ RSpec.describe Api::V1::AirplanesController, type: :controller do
     end
   end
   
+  describe 'DELETE /api/v1/airplanes/id' do
+    it 'Consegue apagar um airplane e retornar 204?' do
+      airplane = Airplane.last
+      
+      delete :destroy, params: {id: airplane.id}
+      expect(Airplane.all).not_to include(airplane)
+      expect(response).to have_http_status(204)
+    end
+  end
+  
 end
