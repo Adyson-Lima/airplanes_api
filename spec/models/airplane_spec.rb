@@ -35,7 +35,7 @@ RSpec.describe Airplane, type: :model do
     
     it 'Airplane invalido com campos obrigatorios em branco?' do
       airplane = Airplane.new
-      expect(airplane).to be_valid
+      expect(airplane).to be_invalid
     end
     
   end
