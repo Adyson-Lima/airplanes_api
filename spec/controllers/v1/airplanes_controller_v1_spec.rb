@@ -30,4 +30,15 @@ RSpec.describe Api::V1::AirplanesController, type: :controller do
     end
   end
   
+  describe 'PATCH /api/v1/airplanes/id' do
+    it 'Consegue atualizar um airplane e retornar status 200?' do
+      airplane = Airplane.last
+      
+      patch :update, params: {airplane: {name: "a360", description: @airplane.description, manufacturer: @airplane.manufacturer},id: airplane.id}
+      
+      expect(response.body).to include_json(name: "a360")
+      expect(response).to have_http_status(200)
+    end
+  end
+  
 end
