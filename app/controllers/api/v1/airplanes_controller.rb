@@ -11,6 +11,16 @@ class Api::V1::AirplanesController < ApplicationController
     render json: @airplane
   end
   
+  def create
+    @airplane = Airplane.new(airplane_params)
+    if @airplane.save
+      render json: @airplane, status: :created, 
+      location: api_v1_airplane_url(@airplane)
+    else
+      render json: @airplane.errors, status: :internal_server_error
+    end
+  end
+  
 private
 
 def set_airplane
